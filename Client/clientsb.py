@@ -10,10 +10,12 @@ data = open(datapath, 'rb').read()
 #create Alert
 dataupk = pk.loads(data)
 html2 = """<html>
-	<head></head>
+	<head>
+        <link href="alert.css" rel="stylesheet"/>
+    </head>
 	<body>
 		<p id="from">From: """
-html2 = html2 + str(socket.gethostname()) + """</p>
+html2 = html2 + dataupk['host'] + """</p>
 	    	<p id="priority">Priority </p>
 		    <div id="msgDiv"> """
 html2 = html2 + dataupk['message'] + """</div>

@@ -1,0 +1,36 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: #b7f390;
+}
+
+#from, #priority
+{
+    width: 100px;
+    margin-left: 20px;
+    /* margin-right: auto; */
+    margin-top: 30px;
+
+}
+#imgDiv, #msgDiv{
+    margin: 20px;
+}
+#msgDiv
+{
+    padding: 20px;
+    width: 90%;
+    height: 40%;
+    background-color: #d7ffc0
+}
+
+img{
+    display: inline-block;
+    width: 12vw;
+    height: 12vw;
+    border: 2px solid #d7ffc0;
+}
+
+img:active, img:hover{
+    width: 20vw;
+    height: 20vw;
+}

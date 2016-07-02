@@ -40,6 +40,7 @@ class server:
 
 	def sendAlert(self,  msg, addresslist,fileList):
 		data = {}
+		data['host'] = socket.gethostname()
 		data['message'] = msg
 		my_list = fileList.split(" ")
 		print (my_list)
