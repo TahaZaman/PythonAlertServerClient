@@ -97,6 +97,7 @@ class GUI:
 		wd = tk.Listbox(top,width=30, height = 30 , listvariable=self.cntcListstr)
 		self.contacts = wd
 		wd.bind('<Button-1>', self.updateList)
+		wd.bind('<Double-Button-1>', self.deleteSelected)
 		wd.grid(row="1", column="2", rowspan = "3")
 		
 		
@@ -114,6 +115,7 @@ class GUI:
 		self.button = wd
 		wd.grid(row = 4 , column = 0, pady = 10, padx = 20)
 		wd.bind('<Button-1>', self.sendMessageAlert)
+		
 
 		wd= tk.Button(text = "Open", width =10, height = 1)
 		self.browsebtn = wd
@@ -124,6 +126,11 @@ class GUI:
 		filepath = tkf.askopenfilenames(parent=self.top)
 		self.sendimglist.delete(0, tk.END)
 		self.sendimglist.insert(tk.END, filepath)
+
+	def deleteSelected(self, event):
+		print("in")
+		s = self.contacts.get(tk.ACTIVE)
+		self.deletefromSendList(s)
 		
 		
 	def updateList(self, event):
